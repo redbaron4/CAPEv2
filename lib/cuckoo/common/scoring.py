@@ -54,7 +54,7 @@ def calc_scoring(results: dict, matched: list):
     status = None
     # Identify the analysis category (file or url).
     category = results.get("target", {}).get("category")
-    fileType = results.get("target", {}).get("file", {}).get("type")
+    fileType = results.get("target", {}).get("file", {}).get("type", [])
 
     # IF THE ANALYSIS IS OF URL TYPE, we use the generic scoring logic
     if category == "url":
@@ -73,8 +73,8 @@ def calc_scoring(results: dict, matched: list):
 
         return finalMalscore, status
 
-    if not fileType:
-        return finalMalscore, status
+    # if not fileType:
+    #     return finalMalscore, status
 
     if "executable" in fileType:
         # We have 5 methodologies
