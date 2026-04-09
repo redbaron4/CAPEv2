@@ -194,4 +194,5 @@ domain_passlist = [
     "statuse.digitalcertvalidation.com",
     "certificates.intel.com",
     "hostonly.hostonly",
+    "ocos-office365-s2s.msedge.net",
 ]
